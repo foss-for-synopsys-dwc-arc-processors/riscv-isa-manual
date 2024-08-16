@@ -6,9 +6,8 @@
 Synopsis:: Add two values
 
 Mnemonic::
-+
-`add rd, rs1, rs2`
-+
+add rd, rs1, rs2
+
 
 Encoding::
 [wavedrom, , svg]
@@ -35,7 +34,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -48,7 +47,7 @@ function clause execute (RISCV_ADD(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -58,9 +57,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Add Immediate
 
 Mnemonic::
-+
-`addi rd, rs1, imm[11:0]`
-+
+addi rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -86,7 +83,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -99,7 +96,7 @@ function clause execute (RISCV_ADDI (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -109,9 +106,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: AND two values
 
 Mnemonic::
-+
-`and rd, rs1, rs2`
-+
+and rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -138,7 +133,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -151,7 +146,7 @@ function clause execute (RISCV_AND(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -161,9 +156,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: AND Immediate
 
 Mnemonic::
-+
-`andi rd, rs1, imm[11:0]`
-+
+andi rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -189,7 +182,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -202,7 +195,7 @@ function clause execute (RISCV_ANDI (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -212,9 +205,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Add Upper Immediate to PC
 
 Mnemonic::
-+
-`auipc rd, imm[31:12]`
-+
+auipc rd, imm[31:12]
 
 Encoding::
 [wavedrom, , svg]
@@ -237,7 +228,7 @@ Arguments::
 |imm20 |input |20-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -249,7 +240,7 @@ function clause execute RISCV_AUIPC(imm, rd, op) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -259,9 +250,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Equal
 
 Mnemonic::
-+
-`beq rs1, rs2, imm[12:1]`
-+
+beq rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -291,7 +280,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -321,7 +310,7 @@ function clause execute (RISCV_BEQ(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -331,9 +320,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Greater than or Equal (Signed)
 
 Mnemonic::
-+
-`bge rs1, rs2, imm[12:1]`
-+
+bge rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -363,7 +350,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -393,7 +380,7 @@ function clause execute (RISCV_BGE(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -403,9 +390,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Greater than or Equal (Unsigned)
 
 Mnemonic::
-+
-`bgeu rs1, rs2, imm[12:1]`
-+
+bgeu rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -435,7 +420,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -465,7 +450,7 @@ function clause execute (RISCV_BGEU(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -475,9 +460,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Less Than (Signed)
 
 Mnemonic::
-+
-`blt rs1, rs2, imm[12:1]`
-+
+blt rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -507,7 +490,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -537,7 +520,7 @@ function clause execute (RISCV_BLT(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -547,9 +530,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Less Than (Unsigned)
 
 Mnemonic::
-+
-`bltu rs1, rs2, imm[12:1]`
-+
+bltu rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -579,7 +560,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -609,7 +590,7 @@ function clause execute (RISCV_BLTU(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -619,9 +600,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Branch if Not Equal
 
 Mnemonic::
-+
-`bne rs1, rs2, imm[12:1]`
-+
+bne rs1, rs2, imm[12:1]
 
 Encoding::
 [wavedrom, , svg]
@@ -651,7 +630,7 @@ Arguments::
 |bimm12lo |input |Low bits of 12-bit branch offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -681,7 +660,7 @@ function clause execute (RISCV_BNE(imm, rs2, rs1)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -691,9 +670,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Environment break
 
 Mnemonic::
-+
-`ebreak`
-+
+ebreak
 
 Encoding::
 [wavedrom, , svg]
@@ -712,7 +689,7 @@ Arguments::
 |Register |Direction |Definition
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -722,7 +699,7 @@ function clause execute EBREAK() = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -732,9 +709,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Environment call
 
 Mnemonic::
-+
-`ecall`
-+
+ecall
 
 Encoding::
 [wavedrom, , svg]
@@ -753,7 +728,7 @@ Arguments::
 |Register |Direction |Definition
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -771,7 +746,7 @@ function clause execute ECALL() = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -781,9 +756,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Enforce ordering between memory operations
 
 Mnemonic::
-+
-`fence fm, pred, succ, rs1, rd`
-+
+fence fm, pred, succ, rs1, rd
 
 Encoding::
 [wavedrom, , svg]
@@ -813,7 +786,7 @@ Arguments::
 |rd |output |Destination register
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -844,7 +817,7 @@ function clause execute (FENCE(pred, succ)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -854,9 +827,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Total Store Ordering fence
 
 Mnemonic::
-+
-`fence_tso rs1, rd`
-+
+fence_tso rs1, rd
 
 Encoding::
 [wavedrom, , svg]
@@ -881,7 +852,7 @@ Arguments::
 |rd |output |Destination register
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -897,7 +868,7 @@ function clause execute (FENCE_TSO(pred, succ)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -907,9 +878,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Jump and Link to target address, storing return address
 
 Mnemonic::
-+
-`jal rd, imm[20|10:1|11|19:12]`
-+
+jal rd, imm[20|10:1|11|19:12]
 
 Encoding::
 [wavedrom, , svg]
@@ -935,7 +904,7 @@ Arguments::
 |jimm20 |input |20-bit jump offset
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -963,7 +932,8 @@ function clause execute (RISCV_JAL(imm, rd)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -973,9 +943,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Jump and Link to computed target, storing return address
 
 Mnemonic::
-+
-`jalr rd, rs1, imm[11:0]`
-+
+jalr rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1002,8 +970,9 @@ Arguments::
 |===
 
 
-Sail Code::
-Included in:: <<rv32,RV32>>, RV64I
+Operation::
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1013,9 +982,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load signed Byte from memory
 
 Mnemonic::
-+
-`lb rd, rs1, imm[11:0]`
-+
+lb rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1041,7 +1008,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute(LB(imm, rs1, rd, aq, rl)) = {
@@ -1061,7 +1028,7 @@ function clause execute(LB(imm, rs1, rd, aq, rl)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
 
 <<<
 
@@ -1071,9 +1038,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load unsigned Byte from memory
 
 Mnemonic::
-+
-`lbu rd, rs1, imm[11:0]`
-+
+lbu rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1099,7 +1064,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute(LBU(imm, rs1, rd, aq, rl)) = {
@@ -1119,7 +1084,8 @@ function clause execute(LBU(imm, rs1, rd, aq, rl)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1129,9 +1095,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load signed Halfword from memory
 
 Mnemonic::
-+
-`lh rd, rs1, imm[11:0]`
-+
+lh rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1157,7 +1121,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute(LH(imm, rs1, rd, aq, rl)) = {
@@ -1180,7 +1144,8 @@ function clause execute(LH(imm, rs1, rd, aq, rl)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1190,9 +1155,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load unsigned Halfword from memory
 
 Mnemonic::
-+
-`lhu rd, rs1, imm[11:0]`
-+
+lhu rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1218,7 +1181,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code::
+Operation::
 [source,sail]
 --
 function clause execute(LHU(imm, rs1, rd, aq, rl)) = {
@@ -1241,7 +1204,8 @@ function clause execute(LHU(imm, rs1, rd, aq, rl)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1251,9 +1215,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load Upper Immediate
 
 Mnemonic::
-+
-`lui rd, imm[31:12]`
-+
+lui rd, imm[31:12]
 
 Encoding::
 [wavedrom, , svg]
@@ -1276,7 +1238,7 @@ Arguments::
 |imm20 |input |20-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1288,7 +1250,8 @@ function clause execute RISCV_LUI(imm, rd, op) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1298,9 +1261,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Load signed Word from memory
 
 Mnemonic::
-+
-`lw rd, rs1, imm[11:0]`
-+
+lw rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1326,7 +1287,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute(LW(imm, rs1, rd, aq, rl)) = {
@@ -1349,7 +1310,8 @@ function clause execute(LW(imm, rs1, rd, aq, rl)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1359,9 +1321,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: OR two values
 
 Mnemonic::
-+
-`or rd, rs1, rs2`
-+
+or rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1388,7 +1348,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1401,7 +1361,8 @@ function clause execute (RISCV_OR(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1411,9 +1372,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: OR Immediate
 
 Mnemonic::
-+
-`ori rd, rs1, imm[11:0]`
-+
+ori rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1439,7 +1398,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1452,7 +1411,8 @@ function clause execute (RISCV_ORI (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1462,9 +1422,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Store Byte to memory
 
 Mnemonic::
-+
-`sb rs1, rs2, imm[11:0]`
-+
+sb rs1, rs2, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1492,7 +1450,7 @@ Arguments::
 |imm12lo |input |Low 6 bits of 12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute (SB(imm, rs2, rs1, aq, rl)) = {
@@ -1522,7 +1480,8 @@ function clause execute (SB(imm, rs2, rs1, aq, rl)) = {
   }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1532,9 +1491,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Store Halfword to memory
 
 Mnemonic::
-+
-`sh rs1, rs2, imm[11:0]`
-+
+sh rs1, rs2, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1562,7 +1519,7 @@ Arguments::
 |imm12lo |input |Low 6 bits of 12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute (SH(imm, rs2, rs1, aq, rl)) = {
@@ -1592,7 +1549,8 @@ function clause execute (SH(imm, rs2, rs1, aq, rl)) = {
   }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1602,9 +1560,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Shift Left Logical
 
 Mnemonic::
-+
-`sll rd, rs1, rs2`
-+
+sll rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1631,7 +1587,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1646,7 +1602,8 @@ function clause execute (RISCV_SLL(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1656,9 +1613,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Set if Less Than (Signed)
 
 Mnemonic::
-+
-`slt rd, rs1, rs2`
-+
+slt rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1685,7 +1640,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1699,7 +1654,8 @@ function clause execute (RISCV_SLT(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1709,9 +1665,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Set if Less Than Immediate (Signed)
 
 Mnemonic::
-+
-`slti rd, rs1, imm[11:0]`
-+
+slti rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1737,7 +1691,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1751,7 +1705,8 @@ function clause execute (RISCV_SLTI (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1761,9 +1716,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Set if Less Than Immediate (Unsigned)
 
 Mnemonic::
-+
-`sltiu rd, rs1, imm[11:0]`
-+
+sltiu rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -1789,7 +1742,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1802,7 +1755,8 @@ function clause execute (RISCV_SLTIU (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1812,9 +1766,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Set if Less Than (Unsigned)
 
 Mnemonic::
-+
-`sltu rd, rs1, rs2`
-+
+sltu rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1841,7 +1793,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1854,7 +1806,8 @@ function clause execute (RISCV_SLTU(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1864,9 +1817,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Shift Right Arithmetic
 
 Mnemonic::
-+
-`sra rd, rs1, rs2`
-+
+sra rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1893,7 +1844,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1908,7 +1859,8 @@ function clause execute (RISCV_SRA(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1918,9 +1870,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Shift Right Logical
 
 Mnemonic::
-+
-`srl rd, rs1, rs2`
-+
+srl rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -1947,7 +1897,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -1962,7 +1912,8 @@ function clause execute (RISCV_SRL(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -1972,9 +1923,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Subtract one value from another
 
 Mnemonic::
-+
-`sub rd, rs1, rs2`
-+
+sub rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -2001,7 +1950,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -2014,7 +1963,8 @@ function clause execute (RISCV_SUB(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -2024,9 +1974,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Store Word to memory
 
 Mnemonic::
-+
-`sw rs1, rs2, imm[11:0]`
-+
+sw rs1, rs2, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -2054,7 +2002,7 @@ Arguments::
 |imm12lo |input |Low 6 bits of 12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 [source,sail]
 --
 function clause execute (SW(imm, rs2, rs1, aq, rl)) = {
@@ -2084,7 +2032,8 @@ function clause execute (SW(imm, rs2, rs1, aq, rl)) = {
   }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -2094,9 +2043,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Exclusive OR two values
 
 Mnemonic::
-+
-`xor rd, rs1, rs2`
-+
+xor rd, rs1, rs2
 
 Encoding::
 [wavedrom, , svg]
@@ -2123,7 +2070,7 @@ Arguments::
 |rs2 |input |Source register 2
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -2136,7 +2083,8 @@ function clause execute (RISCV_XOR(rs2, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
 
@@ -2146,9 +2094,7 @@ Included in:: <<rv32,RV32>>, RV64I
 Synopsis:: Exclusive OR Immediate
 
 Mnemonic::
-+
-`xori rd, rs1, imm[11:0]`
-+
+xori rd, rs1, imm[11:0]
 
 Encoding::
 [wavedrom, , svg]
@@ -2174,7 +2120,7 @@ Arguments::
 |imm12 |input |12-bit immediate
 |===
 
-Sail Code:: 
+Operation:: 
 
 [source,sail]
 --
@@ -2187,6 +2133,7 @@ function clause execute (RISCV_XORI (imm, rs1, rd, op)) = {
 }
 --
 
-Included in:: <<rv32,RV32>>, RV64I
+Included in:: <<rv32,RV32I>>, <<rv64,RV64I>> 
+
 
 <<<
